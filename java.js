@@ -1,45 +1,31 @@
 
-// let img = document.getElementById("img");
-
-
-//     document.getElementById("btn").addEventListener('click', function(){
-//         img.src = "applered.png"
-//     })
-
-//     document.getElementById("newBtn").addEventListener('click', function(){
-//         img.src = "applegreen.png"
-//     })
-
-    // ================ SINGLE BUTTON =============================
-
-// let img = document.getElementById("img");
-
-
-//     document.getElementById("btn").addEventListener('click', function(){
-//        if( img.src.includes('applered.png')) {
-//         img.src = "applegreen.png";
-//        } else{
-//         img.src = "applered.png";
-//     } 
-//     }
-// )
-// =================== CODE END ===========================================
-
-//========================== SLIDER START =============================== 
-
 let img = document.getElementById("img");
+let currentIndex = 0;
+let images = ["slider1.jpg", "slider2.jpg", "slider3.jpg", "slider4.jpg"];
+
+
+
 
 document.getElementById("btn1").addEventListener('click', function(){
-    img.src = "slider1.jpg";
+    img.src = images[0];
+    currentIndex = 0;
 });
 document.getElementById("btn2").addEventListener('click', function(){
-    img.src = "slider2.jpg";
+    img.src = images[1];
+    currentIndex = 1;
 });
 document.getElementById("btn3").addEventListener('click', function(){
-    img.src = "slider3.jpg";
+    img.src = images[2];
+    currentIndex = 2;
 });
 document.getElementById("btn4").addEventListener('click', function(){
-    img.src = "slider4.jpg";
+    img.src = images[3];
+    currentIndex = 3;
 });
+
+setInterval(function() {
+    currentIndex = (currentIndex + 1) % images.length;
+    img.src = images[currentIndex];
+}, 3000);
 
    
